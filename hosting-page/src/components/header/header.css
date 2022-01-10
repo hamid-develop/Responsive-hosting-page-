@@ -1,0 +1,42 @@
+header {
+  background: url("../../../assets/images/headerBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+
+.main-menu {
+    list-style-type: none;
+    display: flex;
+}
+.menu-item {
+    padding: 0 25px;
+
+}
+.menu-link {
+    font-family: "Nunito Bold";
+    color: #ffff;
+   
+   
+}
+
+.login-btn {
+    background-color: #ffff;
+    color: #93A5FF;
+        padding: 10px 15px;
+        border-radius: 5px;
+}
+
+.menu-link:hover {
+    color: #ffff;
+    border-bottom: 1px solid #ffff;
+}
