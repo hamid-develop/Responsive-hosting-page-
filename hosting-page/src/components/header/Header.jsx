@@ -1,10 +1,15 @@
-import "./header.css";
-import {UserOutlined} from '@ant-design/icons'
+import {useState} from 'react'
+import "./header.scss";
+import { UserOutlined } from "@ant-design/icons";
 import logo from "../../../assets/images/logo.png";
 
-
-
 const Header = () => {
+
+  const [menuCollapse, setMenuCollapse] = useState(false)
+
+  const handleCollapseMenu = () => {
+    setMenuCollapse(!menuCollapse)
+  }
   return (
     <header>
       <div className="container">
@@ -12,7 +17,7 @@ const Header = () => {
           <div className="logo-wrapper">
             <img src={logo} alt="logo" />
           </div>
-          <ul className="main-menu">
+          {menuCollapse ? <ul className="main-menu" >
             <li className="menu-item">
               <a className="menu-link">Home</a>
             </li>
@@ -26,11 +31,24 @@ const Header = () => {
               <a className="menu-link">Tools & Resources</a>
             </li>
             <li className="menu-item">
-              <a className="menu-link login-btn">Login<span>
+              <a className=" login-btn">
+                Login
+                <span>
                   <UserOutlined />
-                  </span></a>
+                </span>
+              </a>
             </li>
-          </ul>
+          </ul> : null }
+          
+          <input type="checkbox" id="check" className="checkbox" hidden />
+          <div className="hamburger-menu" 
+          onClick={handleCollapseMenu}>
+            <label for="check" className="menu">
+              <div className="menu-line menu-line-1"></div>
+              <div className="menu-line menu-line-2"></div>
+              <div className="menu-line menu-line-3"></div>
+            </label>
+          </div>
         </nav>
       </div>
     </header>
